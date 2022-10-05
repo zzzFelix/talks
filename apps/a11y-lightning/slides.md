@@ -139,6 +139,7 @@ layout: two-cols
 ---
 
 ::default::
+
 # Thank you
 <br>
 <small>@felixmhoffmann</small>
