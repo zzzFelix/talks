@@ -1,9 +1,9 @@
 {
-  "name": "a11y",
+  "name": "a11y-lightning",
   "private": true,
   "scripts": {
-    "build": "slidev build --base /a11y/ --out ../../dist/a11y",
-    "dev": "slidev --open",
+    "build": "slidev build --base /a11y-lightning/ --out ../../dist/a11y-lightning",
+    "dev": "slidev --open --port=3040",
     "export": "slidev export"
   }
 }
