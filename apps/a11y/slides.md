@@ -36,16 +36,46 @@ layout: fact
 
 # Hello 👋
 
+<v-clicks>
 My name is Felix Hoffmann
 
-Software engineer @iteratec
+I'm a software engineer @iteratec
+
+and I like trains 🚂
+</v-clicks>
 
 ---
-layout: image-right
-image: 'bendy-straw.webp'
+layout: center
 ---
 
-# Joseph Friedman and the bendy-straw
+<div grid="~ cols-3 gap-8">
+
+<div>
+
+### Elevators
+<img src="elevator.webp" alt="Elevator">
+</div>
+
+<div v-click>
+
+### Step-free access
+<img src="level-access.webp" alt="Step-free access onto a train">
+</div>
+
+<div v-click>
+
+### Automatic doors
+<img src="train-doors.webp" alt="A train with heavy, manual doors.">
+</div>
+
+</div>
+
+---
+layout: fact
+---
+
+# 1.6 billion
+## 1 in 6 people experience significant disability
 
 ---
 layout: center
@@ -54,6 +84,14 @@ layout: center
 # Web Content Accessibility Guidelines
 
 <vue-video src="wcag.mp4" stillSrc="wcag-still.webp" :clicks="$slidev.nav.clicks"></vue-video>
+---
+
+# Design for accessibility
+
+- Users of screen readers
+- Users with low vision
+- Users with dyslexia
+- Users with limited motor skills
 
 ---
 layout: two-cols
@@ -101,6 +139,24 @@ layout: two-cols
 ```
 </v-click>
 
+---
+layout: fact
+---
+
+# Structure
+
+---
+layout: fact
+---
+
+# Contrast
+
+---
+layout: image-right
+image: 'bendy-straw.webp'
+---
+
+# Joseph Friedman and the bendy-straw
 
 ---
 
@@ -112,6 +168,19 @@ layout: two-cols
 layout: center
 ---
 <vue-video src="youtube.webm" stillSrc="youtube-still.webp" :clicks="$slidev.nav.clicks"></vue-video>
+
+---
+layout: fact
+---
+
+# Keyboard navigation
+
+---
+layout: fact
+---
+
+# Enough time
+
 ---
 
 # Many users use a11y features
@@ -119,6 +188,13 @@ layout: center
 - Android users love to customize EVERYTHING
 - 20% of teenage users have activated zoom mode
 
+![Tweet by Nikita Bier: "Startups usually ignore accessibility—since they're just trying to prove that a product works. But when testing Gas, we started seeing screenshots on Snapchat that looked off. We found that over 20% of teens have Zoom-mode enabled, so we prioritized it & saw our K-factor jump 0.1"](tweet.webp)
+
+---
+layout: fact
+---
+
+# Search engine optimization
 ---
 
 # Legal
@@ -133,6 +209,14 @@ layout: center
 <img src="surprised-pikachu.png"
      alt="Surprised Pikachu face meme"
      style="height: 15rem;" />
+
+---
+layout: center
+---
+
+<img src="nytimes.webp"
+     alt="A New York Times article. Title: M.T.A. Vows to Make Subways 95% Accessible. It Will Take 33 Years."
+     style="height: 28rem;" />
 
 ---
 layout: two-cols
