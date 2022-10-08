@@ -159,14 +159,11 @@ image: 'bendy-straw.webp'
 # Joseph Friedman and the bendy-straw
 
 ---
+layout: center
+---
 
 # Captions
 
-- Eating chips
-- Learning a language
----
-layout: center
----
 <vue-video src="youtube.webm" stillSrc="youtube-still.webp" :clicks="$slidev.nav.clicks"></vue-video>
 
 ---
@@ -182,13 +179,17 @@ layout: fact
 # Enough time
 
 ---
+layout: center
+---
 
-# Many users use a11y features
+<div class="grid justify-center text-center">
 
-- Android users love to customize EVERYTHING
-- 20% of teenage users have activated zoom mode
+# Resize text
 
-![Tweet by Nikita Bier: "Startups usually ignore accessibility—since they're just trying to prove that a product works. But when testing Gas, we started seeing screenshots on Snapchat that looked off. We found that over 20% of teens have Zoom-mode enabled, so we prioritized it & saw our K-factor jump 0.1"](tweet.webp)
+<img src="/tweet.webp"
+     alt="Tweet by Nikita Bier: Startups usually ignore accessibility—since they're just trying to prove that a product works. But when testing Gas, we started seeing screenshots on Snapchat that looked off. We found that over 20% of teens have Zoom-mode enabled, so we prioritized it & saw our K-factor jump 0.1"
+     style="height: 15rem;" />
+</div>
 
 ---
 layout: fact
@@ -197,18 +198,22 @@ layout: fact
 # Search engine optimization
 ---
 
-# Legal
+# Don't get sued
 
-- Austria has a law
-- EU will have a law in 2025
-- Corporations in 2025: surprised pikachu face
+- Americans with Disabilities Act (ADA)
+- European Accessibility Act (EAA)
+- Other national laws
 ---
 layout: center
 ---
 
+# EU corporations in 2025
+
+<div class="grid justify-center">
 <img src="surprised-pikachu.png"
      alt="Surprised Pikachu face meme"
      style="height: 15rem;" />
+</div>
 
 ---
 layout: center
@@ -219,18 +224,25 @@ layout: center
      style="height: 28rem;" />
 
 ---
-layout: two-cols
+layout: two-cols-header
 ---
 
-::default::
+::header::
 
 # Thank you
-<br>
-<small>@felixmhoffmann</small>
+
+::left::
+
+<div class="h-full grid items-end">
+  <small>@felixmhoffmann</small>
+</div>
 
 ::right::
 
-<img src="qrcode.png" alt="QR code with a link to the slides" style="height: 15rem;">
-<br>
-Slides
+<div class="h-full grid items-end justify-end">
+  <div>
+    <p>Slides</p>
+    <img src="qrcode.png" alt="QR code with a link to the slides" style="height: 11rem;">
+  </div>
+</div>
 
