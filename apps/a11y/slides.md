@@ -53,19 +53,19 @@ layout: center
 <div>
 
 ### Elevators
-<img src="elevator.webp" alt="Elevator">
+<img src="/elevator.webp" alt="Elevator">
 </div>
 
 <div v-click>
 
 ### Step-free access
-<img src="level-access.webp" alt="Step-free access onto a train">
+<img src="/level-access.webp" alt="Step-free access onto a train">
 </div>
 
 <div v-click>
 
 ### Automatic doors
-<img src="train-doors.webp" alt="A train with heavy, manual doors.">
+<img src="/train-doors.webp" alt="A train with heavy, manual doors.">
 </div>
 
 </div>
@@ -83,7 +83,7 @@ layout: center
 
 # Web Content Accessibility Guidelines
 
-<vue-video src="wcag.mp4" stillSrc="wcag-still.webp" :clicks="$slidev.nav.clicks"></vue-video>
+<vue-video src="/wcag.mp4" stillSrc="/wcag-still.webp" :clicks="$slidev.nav.clicks"></vue-video>
 ---
 
 # Design for accessibility
@@ -153,7 +153,7 @@ layout: fact
 
 ---
 layout: image-right
-image: 'bendy-straw.webp'
+image: '/bendy-straw.webp'
 ---
 
 # Joseph Friedman and the bendy-straw
@@ -164,7 +164,7 @@ layout: center
 
 # Captions
 
-<vue-video src="youtube.webm" stillSrc="youtube-still.webp" :clicks="$slidev.nav.clicks"></vue-video>
+<vue-video src="/youtube.webm" stillSrc="/youtube-still.webp" :clicks="$slidev.nav.clicks"></vue-video>
 
 ---
 layout: fact
@@ -210,7 +210,7 @@ layout: center
 # EU corporations in 2025
 
 <div class="grid justify-center">
-<img src="surprised-pikachu.png"
+<img src="/surprised-pikachu.png"
      alt="Surprised Pikachu face meme"
      style="height: 15rem;" />
 </div>
@@ -219,7 +219,7 @@ layout: center
 layout: center
 ---
 
-<img src="nytimes.webp"
+<img src="/nytimes.webp"
      alt="A New York Times article. Title: M.T.A. Vows to Make Subways 95% Accessible. It Will Take 33 Years."
      style="height: 28rem;" />
 
@@ -242,7 +242,7 @@ layout: two-cols-header
 <div class="h-full grid items-end justify-end">
   <div>
     <p>Slides</p>
-    <img src="qrcode.png" alt="QR code with a link to the slides" style="height: 11rem;">
+    <img src="/qrcode.png" alt="QR code with a link to the slides" style="height: 11rem;">
   </div>
 </div>
 

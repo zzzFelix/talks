@@ -42,7 +42,7 @@ Software engineer @iteratec
 
 ---
 layout: image-right
-image: 'bendy-straw.webp'
+image: '/bendy-straw.webp'
 ---
 
 # Joseph Friedman and the bendy-straw
@@ -53,7 +53,7 @@ layout: center
 
 # Web Content Accessibility Guidelines
 
-<vue-video src="wcag.mp4" stillSrc="wcag-still.webp" :clicks="$slidev.nav.clicks"></vue-video>
+<vue-video src="/wcag.mp4" stillSrc="/wcag-still.webp" :clicks="$slidev.nav.clicks"></vue-video>
 
 ---
 layout: two-cols
@@ -111,7 +111,7 @@ layout: two-cols
 ---
 layout: center
 ---
-<vue-video src="youtube.webm" stillSrc="youtube-still.webp" :clicks="$slidev.nav.clicks"></vue-video>
+<vue-video src="/youtube.webm" stillSrc="/youtube-still.webp" :clicks="$slidev.nav.clicks"></vue-video>
 ---
 
 # Many users use a11y features
@@ -130,7 +130,7 @@ layout: center
 layout: center
 ---
 
-<img src="surprised-pikachu.png"
+<img src="/surprised-pikachu.png"
      alt="Surprised Pikachu face meme"
      style="height: 15rem;" />
 
@@ -146,7 +146,7 @@ layout: two-cols
 
 ::right::
 
-<img src="qrcode.png" alt="QR code with a link to the slides" style="height: 15rem;">
+<img src="/qrcode.png" alt="QR code with a link to the slides" style="height: 15rem;">
 <br>
 Slides
 
