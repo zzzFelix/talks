@@ -5,7 +5,6 @@
         <img src="../qrcode.png">
         <img src="./qrcode.png">
         <img src="/qrcode.png">
-        <img src="qrcode.png">
         <video v-click class="vue-video" ref="video">
             <source :src="`../${src}`" type="video/mp4">
         </video>
