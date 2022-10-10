@@ -2,7 +2,7 @@
     <article>
         <img :src="stillSrc" :alt="alt" class="vue-video">
         <video v-click class="vue-video" ref="video">
-            <source :src="src" type="video/mp4">
+            <source :src="`../${src}`" type="video/mp4">
         </video>
     </article>
 </template>
