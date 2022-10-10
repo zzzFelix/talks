@@ -1,6 +1,6 @@
 <template>
     <article>
-        <img :src="stillSrc" alt="Screencast of YouTube displaying the use of captions for previews" class="vue-video">
+        <img :src="stillSrc" :alt="alt" class="vue-video">
         <video v-click class="vue-video" ref="video">
             <source :src="src" type="video/mp4">
         </video>
@@ -23,6 +23,10 @@ const props = defineProps({
     },
     clicks: {
         type: Number,
+        required: true
+    },
+    alt: {
+        type: String,
         required: true
     }
 })

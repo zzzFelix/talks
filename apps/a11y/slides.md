@@ -83,7 +83,7 @@ layout: center
 
 # Web Content Accessibility Guidelines
 
-<vue-video src="/wcag.mp4" stillSrc="/wcag-still.webp" :clicks="$slidev.nav.clicks"></vue-video>
+<vue-video src="/wcag.mp4" stillSrc="/wcag-still.webp" :clicks="$slidev.nav.clicks" alt="Screencast of Web Content Accessiblity Guidelines"></vue-video>
 ---
 
 # Design for accessibility
@@ -164,7 +164,7 @@ layout: center
 
 # Captions
 
-<vue-video src="/youtube.webm" stillSrc="/youtube-still.webp" :clicks="$slidev.nav.clicks"></vue-video>
+<vue-video src="youtube.webm" stillSrc="youtube-still.webp" :clicks="$slidev.nav.clicks" alt="Screencast of YouTube displaying the use of captions for previews"></vue-video>
 
 ---
 layout: fact
