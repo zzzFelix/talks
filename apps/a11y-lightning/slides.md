@@ -53,7 +53,7 @@ layout: center
 
 # Web Content Accessibility Guidelines
 
-<vue-video src="/wcag.mp4" stillSrc="/wcag-still.webp" alt="Screencast of Web Content Accessibility Guidelines" :clicks="$slidev.nav.clicks"></vue-video>
+<vue-video src="wcag.mp4" stillSrc="wcag-still.webp" alt="Screencast of Web Content Accessibility Guidelines" :clicks="$slidev.nav.clicks"></vue-video>
 
 ---
 layout: two-cols
@@ -111,7 +111,7 @@ layout: two-cols
 ---
 layout: center
 ---
-<vue-video src="/youtube.webm" stillSrc="/youtube-still.webp" alt="Screencast of YouTube displaying the use of captions for previews" :clicks="$slidev.nav.clicks"></vue-video>
+<vue-video src="youtube.webm" stillSrc="youtube-still.webp" alt="Screencast of YouTube displaying the use of captions for previews" :clicks="$slidev.nav.clicks"></vue-video>
 ---
 
 # Many users use a11y features
