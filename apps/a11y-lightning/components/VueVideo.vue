@@ -1,8 +1,8 @@
 <template>
     <article>
-        <img :src="`/a11y-lightning/${stillSrc}`" :alt="alt" class="vue-video">
+        <img :src="`${baseUrl}${stillSrc}`" :alt="alt" class="vue-video">
         <video v-click class="vue-video" ref="video">
-            <source :src="`/a11y-lightning/${src}`" type="video/mp4">
+            <source :src="`${baseUrl}${src}`" type="video/mp4">
         </video>
     </article>
 </template>
@@ -11,6 +11,7 @@
 import { ref, VNodeRef, watch } from 'vue';
 
 const video: VNodeRef = ref(null)
+const baseUrl = import.meta.env.BASE_URL;
 
 const props = defineProps({
     src: {
