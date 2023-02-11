@@ -1,9 +1,9 @@
 {
-  "name": "talk2",
+  "name": "a11y",
   "private": true,
   "scripts": {
-    "build": "slidev build --base /talk2/ --out ../../dist/talk2",
-    "dev": "slidev --open --port=3040",
+    "build": "slidev build --base /a11y/ --out ../../dist/a11y",
+    "dev": "slidev --open",
     "export": "slidev export"
   },
   "dependencies": {
