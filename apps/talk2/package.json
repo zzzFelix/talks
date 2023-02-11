@@ -1,0 +1,14 @@
+{
+  "name": "talk2",
+  "private": true,
+  "scripts": {
+    "build": "slidev build --base /talk2/ --out ../../dist/talk2",
+    "dev": "slidev --open --port=3040",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@slidev/cli": "^0.40.2",
+    "@slidev/theme-default": "*",
+    "@slidev/theme-seriph": "*"
+  }
+}

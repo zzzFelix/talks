@@ -1,0 +1,10 @@
+{
+    "name": "index",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build --outDir ../../dist"
+      },
+      "devDependencies": {
+        "vite": "^4.0.0"
+      }
+}
