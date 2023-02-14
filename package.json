@@ -16,5 +16,8 @@
   "engines": {
     "node": ">=14.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@slidev/cli": "^0.40.2",
+    "slidev-theme-spezi": "0.0.0"
+  }
 }

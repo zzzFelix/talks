@@ -5,10 +5,5 @@
     "build": "slidev build --base /a11y-lightning/ --out ../../dist/a11y-lightning",
     "dev": "slidev --open --port=3040",
     "export": "slidev export"
-  },
-  "dependencies": {
-    "@slidev/cli": "^0.40.2",
-    "@slidev/theme-default": "*",
-    "@slidev/theme-seriph": "*"
   }
 }

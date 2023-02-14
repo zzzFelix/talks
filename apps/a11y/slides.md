@@ -1,6 +1,6 @@
 ---
 # try also 'default' to start simple
-theme: default
+theme: spezi
 # apply any windi css classes to the current slide
 class: 'text-center'
 # https://sli.dev/custom/highlighters.html
