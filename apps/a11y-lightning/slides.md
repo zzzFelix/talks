@@ -30,16 +30,22 @@ css: unocss
 ## The Benefits of Inclusive Design
 
 <small>@felixmhoffmann</small>
-
+---
+layout: fact
 ---
 
 # Hello 👋
 
-# My name is Felix
+My name is Felix Hoffmann
 
-## Software Engineer @iteratec
+Software engineer @iteratec
 
-We build software for companies in Germany, Austria, and Poland.
+---
+layout: image-right
+image: 'bendy-straw.webp'
+---
+
+# Joseph Friedman and the bendy-straw
 
 ---
 
@@ -94,9 +100,7 @@ layout: two-cols
 </div>
 ```
 </v-click>
----
 
-# Joseph Friedman and the bendy-straw
 
 ---
 
@@ -105,7 +109,7 @@ layout: two-cols
 ---
 
 # YouTube
-
+<vue-video src="/youtube.mp4"></vue-video>
 ---
 
 # Many users use a11y features
