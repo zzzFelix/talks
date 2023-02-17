@@ -28,7 +28,7 @@ css: unocss
 # Accessibility for All
 
 ## The Benefits of Inclusive Design
-
+<br><br>
 <small>@felixmhoffmann</small>
 ---
 layout: fact
@@ -106,10 +106,12 @@ layout: two-cols
 
 # Captions
 
+- Eating chips
+- Learning a language
 ---
 layout: center
 ---
-<vue-video src="/youtube.webm" stillSrc="youtube-still.webp"></vue-video>
+<vue-video src="youtube.webm" stillSrc="youtube-still.webp" :clicks="$slidev.nav.clicks"></vue-video>
 ---
 
 # Many users use a11y features
@@ -131,9 +133,19 @@ layout: center
 <img src="surprised-pikachu.png"
      alt="Surprised Pikachu face meme"
      style="height: 15rem;" />
+
+---
+layout: two-cols
 ---
 
+::default::
 # Thank you
-
+<br>
 <small>@felixmhoffmann</small>
+
+::right::
+
+<img src="qrcode.png" alt="QR code with a link to the slides" style="height: 15rem;">
+<br>
+Slides
 
