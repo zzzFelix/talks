@@ -48,12 +48,12 @@ image: 'bendy-straw.webp'
 # Joseph Friedman and the bendy-straw
 
 ---
+layout: center
+---
 
 # Web Content Accessibility Guidelines
 
-Also known as WCAG for short
-
-You'll find stuff like ...
+<vue-video src="wcag.mp4" stillSrc="wcag-still.webp" :clicks="$slidev.nav.clicks"></vue-video>
 
 ---
 layout: two-cols
@@ -107,9 +107,9 @@ layout: two-cols
 # Captions
 
 ---
-
-# YouTube
-<vue-video src="/youtube.mp4"></vue-video>
+layout: center
+---
+<vue-video src="/youtube.webm" stillSrc="youtube-still.webp"></vue-video>
 ---
 
 # Many users use a11y features
@@ -124,7 +124,13 @@ layout: two-cols
 - Austria has a law
 - EU will have a law in 2025
 - Corporations in 2025: surprised pikachu face
+---
+layout: center
+---
 
+<img src="surprised-pikachu.png"
+     alt="Surprised Pikachu face meme"
+     style="height: 15rem;" />
 ---
 
 # Thank you
