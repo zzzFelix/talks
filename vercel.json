@@ -1,9 +1,0 @@
-{
-    "rewrites": [
-      { "source": "/a11y/(.*)", "destination": "/a11y/index.html" },
-      { "source": "/a11y-lightning/(.*)", "destination": "/a11y-lightning/index.html" }
-    ],
-    "buildCommand": "npm run build -- --force",
-    "outputDirectory": "dist"
-  }
-  
