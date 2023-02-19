@@ -1,28 +1,19 @@
 ---
-# try also 'default' to start simple
 theme: spezi
-# random image from a curated Unsplash collection by Anthony
-# like them? see https://unsplash.com/collections/94734566/slidev
 background: https://source.unsplash.com/collection/94734566/1920x1080
-# apply any windi css classes to the current slide
-class: 'text-center'
-# https://sli.dev/custom/highlighters.html
+class: text-center
 highlighter: shiki
-# show line numbers in code blocks
 lineNumbers: false
-# some information about the slides, markdown enabled
 info: |
   ## Slidev Starter Template
   Presentation slides for developers.
 
   Learn more at [Sli.dev](https://sli.dev)
-# persist drawings in exports and build
 drawings:
   persist: false
-# page transition
 transition: slide-left
-# use UnoCSS
 css: unocss
+title: Accessibility for All
 ---
 
 # Accessibility for All
@@ -30,22 +21,22 @@ css: unocss
 ## The Benefits of Inclusive Design
 <br><br>
 <small>@felixmhoffmann</small>
+
+<!--
+Inclusive Design = Not building for a small audience and then trying to slap accessibility on top but designing something so that it works for everyone
+-->
+
 ---
 layout: fact
 ---
 
 # Hello 👋
 
+<v-clicks>
 My name is Felix Hoffmann
 
-Software engineer @iteratec
-
----
-layout: image-right
-image: '/bendy-straw.webp'
----
-
-# Joseph Friedman and the bendy-straw
+I'm a software engineer @iteratec
+</v-clicks>
 
 ---
 layout: center
@@ -53,7 +44,7 @@ layout: center
 
 # Web Content Accessibility Guidelines
 
-<vue-video src="wcag.mp4" stillSrc="wcag-still.webp" alt="Screencast of Web Content Accessibility Guidelines" :clicks="$slidev.nav.clicks"></vue-video>
+<vue-video src="wcag.mp4" stillSrc="wcag-still.webp" :clicks="$slidev.nav.clicks" alt="Screencast of Web Content Accessiblity Guidelines"></vue-video>
 
 ---
 layout: two-cols
@@ -101,52 +92,80 @@ layout: two-cols
 ```
 </v-click>
 
+---
+layout: image-right
+image: '/bendy-straw.webp'
+---
 
+# Joseph Friedman and the bendy-straw
+
+---
+layout: center
 ---
 
 # Captions
 
-- Eating chips
-- Learning a language
----
-layout: center
----
-<vue-video src="youtube.webm" stillSrc="youtube-still.webp" alt="Screencast of YouTube displaying the use of captions for previews" :clicks="$slidev.nav.clicks"></vue-video>
----
-
-# Many users use a11y features
-
-- Android users love to customize EVERYTHING
-- 20% of teenage users have activated zoom mode
+<vue-video src="youtube.webm" stillSrc="youtube-still.webp" :clicks="$slidev.nav.clicks" alt="Screencast of YouTube displaying the use of captions for previews"></vue-video>
 
 ---
+layout: fact
+---
 
-# Legal
+# 1.6 billion
+## 1 in 6 people experience significant disability
 
-- Austria has a law
-- EU will have a law in 2025
-- Corporations in 2025: surprised pikachu face
+
 ---
 layout: center
 ---
 
+<div class="grid justify-center text-center">
+
+# Resize text
+
+<img src="/tweet.webp"
+     alt="Tweet by Nikita Bier: Startups usually ignore accessibility—since they're just trying to prove that a product works. But when testing Gas, we started seeing screenshots on Snapchat that looked off. We found that over 20% of teens have Zoom-mode enabled, so we prioritized it & saw our K-factor jump 0.1"
+     style="height: 15rem;" />
+</div>
+
+---
+
+# Don't get sued
+
+- Americans with Disabilities Act (ADA)
+- European Accessibility Act (EAA)
+- Other national laws
+---
+layout: center
+---
+
+# EU corporations in 2025
+
+<div class="grid justify-center">
 <img src="/surprised-pikachu.png"
      alt="Surprised Pikachu face meme"
      style="height: 15rem;" />
+</div>
 
 ---
-layout: two-cols
+layout: two-cols-header
 ---
 
-::default::
+::header::
 
 # Thank you
-<br>
-<small>@felixmhoffmann</small>
+
+::left::
+
+<div class="h-full grid items-end">
+  <small>@felixmhoffmann</small>
+</div>
 
 ::right::
 
-<img src="/qrcode.png" alt="QR code with a link to the slides" style="height: 15rem;">
-<br>
-Slides
-
+<div class="h-full grid items-end justify-end">
+  <div>
+    <p>Slides</p>
+    <img src="/qrcode.png" alt="QR code with a link to the slides" style="height: 11rem;">
+  </div>
+</div>
