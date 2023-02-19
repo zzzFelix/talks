@@ -78,6 +78,16 @@ layout: fact
 ## 1 in 6 people experience significant disability
 
 ---
+layout: quote
+quote: "The design of mainstream products and/or services that are accessible to, and usable by, as many people as reasonably possible … without the need for special adaptation or specialised design."
+author: "The British Standards Institute (2005)"
+cite: "https://knowledge.bsigroup.com/products/design-management-systems-managing-inclusive-design-guide/standard"
+---
+
+::header::
+# Inclusive design
+
+---
 layout: center
 ---
 
