@@ -18,6 +18,6 @@
   },
   "dependencies": {
     "@slidev/cli": "^0.40.2",
-    "slidev-theme-spezi": "0.0.3"
+    "slidev-theme-spezi": "0.0.4"
   }
 }
