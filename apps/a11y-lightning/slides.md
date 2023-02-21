@@ -211,7 +211,7 @@ layout: two-cols-header
 
 <div class="h-full grid items-end justify-end">
   <div>
-    <p>Slides</p>
+    <slides-arrow></slides-arrow>
     <img src="/qrcode.png" alt="QR code with a link to the slides" style="height: 11rem;">
   </div>
 </div>
