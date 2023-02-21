@@ -28,11 +28,9 @@ layout: fact
 
 # Hello 👋
 
-<v-clicks>
 My name is Felix Hoffmann
 
 I'm a software engineer @iteratec
-</v-clicks>
 
 ---
 layout: fact
@@ -47,7 +45,7 @@ layout: center
 
 <div class="grid justify-center text-center">
 
-# Many people use accessibility features
+# More people use accessibility features
 <p class="justify-self-center">
   <img src="/tweet.webp"
      alt="Tweet by Nikita Bier: Startups usually ignore accessibility—since they're just trying to prove that a product works. But when testing Gas, we started seeing screenshots on Snapchat that looked off. We found that over 20% of teens have Zoom-mode enabled, so we prioritized it & saw our K-factor jump 0.1"
@@ -156,6 +154,14 @@ When we design with accessibility in mind, we can create superior user experienc
 ---
 layout: image-right
 image: '/bendy-straw-2.webp'
+transition: fade
+---
+
+# Joseph Friedman and the bendy-straw
+
+---
+layout: image-right
+image: '/bendy-straw-3.webp'
 ---
 
 # Joseph Friedman and the bendy-straw
@@ -172,8 +178,8 @@ layout: center
 
 # Don't get sued
 
-- Americans with Disabilities Act (ADA)
-- European Accessibility Act (EAA), comes into force in 2025
+- European Accessibility Act (EAA), comes into force in 2025 🇪🇺
+- Web-Zugänglichkeits-Gesetz 🇦🇹
 - Other national and regional laws
 ---
 layout: center
