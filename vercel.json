@@ -1,0 +1,14 @@
+{
+    "rewrites": [
+        {
+            "source": "/a11y/*",
+            "destination": "/a11y"
+        },
+        {
+            "source": "/a11y-lightning/*",
+            "destination": "/a11y-lightning"
+        },
+    ],
+    "buildCommand": "npm run build",
+    "outputDirectory": "dist"
+}
