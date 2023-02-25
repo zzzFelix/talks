@@ -10,7 +10,7 @@
         },
         {
             "source": "/source",
-            "destination": "/destination"
+            "destination": "/a11y-lightning"
         }
     ],
     "buildCommand": "npm run build -- --force",
