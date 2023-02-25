@@ -9,6 +9,6 @@
             "destination": "/a11y-lightning"
         }
     ],
-    "buildCommand": "npm run build",
+    "buildCommand": "npm run build -- --force",
     "outputDirectory": "dist"
 }
