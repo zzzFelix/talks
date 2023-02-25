@@ -13,7 +13,7 @@
             "destination": "/a11y-lightning"
         }
     ],
-    "redirect": [
+    "redirects": [
         {
             "source": "/source",
             "destination": "https://google.com"
