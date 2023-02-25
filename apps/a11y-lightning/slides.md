@@ -63,11 +63,6 @@ cite: "https://knowledge.bsigroup.com/products/design-management-systems-managin
 ::header::
 # Inclusive design
 
-<!--
-Inclusive Design = Instead of designing a product and then figuring out how it might work for people with disabilities, we design a product that works for everyone, including people with disabilities.
-To do that, we have to follow certain rules. We find these rules in the Web Content Accessibility Guidelines. They look like this (CLICK).
--->
-
 ---
 layout: center
 ---
@@ -77,12 +72,6 @@ layout: center
 <div class="grid justify-center">
   <img src="/wcag-still.webp" alt="Screenshot of Web Content Accessibility Guidelines" style="height: 20rem;">
 </div>
-
-<!--
-For the purpose of this talk, I am not going into detail what's in there. I only have 7 minutes and they are quite long. (CLICK/SCROLL)
-If you're not familiar with the Web Content Accessibility Guidelines, I highly recommend checking them out.
-Let me give you a quick example of what you find in there.
--->
 
 ---
 layout: two-cols
@@ -143,13 +132,6 @@ transition: fade
 ---
 
 # Joseph Friedman and the bendy-straw
-
-<!--
-patent (CLICK)
-ad (CLICK)
-mood picture (CLICK)
-When we design with accessibility in mind, we can create superior user experiences for everyone. Let's look at what YouTube has done with captions.
--->
 
 ---
 layout: image-right
