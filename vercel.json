@@ -10,5 +10,5 @@
         }
     ],
     "buildCommand": "npm run build -- --force",
-    "outputDirectory": "dist"
+    "outputDirectory": "../dist"
 }
