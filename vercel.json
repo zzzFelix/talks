@@ -13,6 +13,13 @@
             "destination": "/a11y-lightning"
         }
     ],
+    "redirect": [
+        {
+            "source": "/source",
+            "destination": "https://google.com"
+        }
+    ],
     "buildCommand": "npm run build -- --force",
-    "outputDirectory": "../dist"
+    "outputDirectory": "../dist",
+    "trailingSlash": false
 }
