@@ -1,0 +1,9 @@
+{
+  "name": "kubernetes",
+  "private": true,
+  "scripts": {
+    "build": "slidev build --base /kubernetes/ --out ../../dist/kubernetes",
+    "dev": "slidev --open --port=3050",
+    "export": "slidev export"
+  }
+}
