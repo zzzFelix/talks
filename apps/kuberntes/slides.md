@@ -18,9 +18,40 @@ title: How to Blow Up a Kubernetes Cluster
 
 # How to Blow Up a Kuberntes Cluster
 
-## Resource Management for Pods and Containers
+## Resource management for application developers
 
 ---
+layout: fact
+---
+
+# Hello 👋
+
+My name is Felix Hoffmann
+
+I'm a software engineer @iteratec
+
+CKAD
+
+---
+
+# What are resource requests and resource limits?
+
+- Request: Amount of memory and CPU that is guaranteed for your pod. 
+- Limit: Amount of memory and CPU that your pod cannot exceed.
+
+---
+
+# Quality of Service
+
+- BestEffort = No resource requests and no limits
+- Burstable = Resource limit is greater than resource request
+- Guaranteed = Resource limit is equal to resource request
+
+---
+
+# Scheduling
+
+--- 
 
 # Know your resources
 
@@ -55,6 +86,7 @@ spec:
       cpu: 500m
     type: Container
 ```
+
 ::right::
 
 <v-click>
@@ -74,3 +106,16 @@ spec:
         cpu: 700m
 ```
 </v-click>
+
+---
+
+# Recommendations
+
+- memory request = memory limit
+- no CPU limit
+
+---
+
+# Don't take my word for it
+
+https://twitter.com/thockin/status/1134193838841401345
