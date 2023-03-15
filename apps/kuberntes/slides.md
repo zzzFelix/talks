@@ -38,7 +38,9 @@ Total limits may be over 100 percent, i.e., overcommitted.
 
 Note: A LimitRange does not check the consistency of the default values it applies. This means that a default value for the limit that is set by LimitRange may be less than the request value specified for the container in the spec that a client submits to the API server. If that happens, the final Pod will not be scheduleable. See Constraints on resource limits and requests for more details.
 
---- 
+---
+layout: two-cols
+---
 
 # Watch out for namespace limits
 
