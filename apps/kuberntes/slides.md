@@ -81,6 +81,7 @@ CKAD
 # CPU throttling is agressive
 
 - Slows down pods way before they reach their limits
+- because of cgroups
 
 ---
 
