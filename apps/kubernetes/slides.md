@@ -16,7 +16,7 @@ css: unocss
 title: How to Blow Up a Kubernetes Cluster
 ---
 
-# How to Blow Up a Kuberntes Cluster
+# How to Blow Up a Kubernetes Cluster
 
 ## Resource management for application developers
 
@@ -26,18 +26,52 @@ layout: fact
 
 # Hello 👋
 
-My name is Felix Hoffmann
+My name is Felix
 
-I'm a software engineer @iteratec
-
-CKAD
+Software engineer @iteratec
 
 ---
 
-# What are resource requests and resource limits?
+# Requests and limits 
 
-- Request: Amount of memory and CPU that is guaranteed for your pod. 
-- Limit: Amount of memory and CPU that your pod cannot exceed.
+- Request: Amount of memory/CPU that is guaranteed for your container. 
+- Limit: Amount of memory/CPU that your container cannot exceed.
+
+---
+
+# Requests and limits 
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: frontend
+spec:
+  containers:
+  - name: app
+    image: images.my-company.example/app:v4
+    resources:
+      requests:
+        memory: "64Mi"
+        cpu: "250m"
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+```
+
+---
+
+# How Pods with resource requests are scheduled 
+
+- When you create a Pod, the Kubernetes scheduler selects a node for the Pod to run on
+- The scheduler ensures that, for each resource type, the sum of the resource requests of the scheduled containers is less than the capacity of the node
+- Note that although actual memory or CPU resource usage on nodes is very low, the scheduler still refuses to place a Pod on a node if the capacity check fails
+
+---
+
+# How to Blow Up a Kubernetes Cluster
+
+- Ingridients: a couple of microservices, Kafka, barely enough memory
 
 ---
 
@@ -110,10 +144,14 @@ Total limits may be over 100 percent, i.e., overcommitted.
 Note: A LimitRange does not check the consistency of the default values it applies. This means that a default value for the limit that is set by LimitRange may be less than the request value specified for the container in the spec that a client submits to the API server. If that happens, the final Pod will not be scheduleable. See Constraints on resource limits and requests for more details.
 
 ---
-layout: two-cols
+layout: two-cols-header
 ---
 
+::header::
+
 # Watch out for namespace limits
+
+::left::
 
 ```yaml
 apiVersion: v1
@@ -130,7 +168,6 @@ spec:
 ::right::
 
 <v-click>
-<h1> </h1>
 
 ```yaml
 apiVersion: v1
