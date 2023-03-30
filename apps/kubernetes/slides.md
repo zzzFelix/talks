@@ -75,6 +75,24 @@ spec:
 
 ---
 
+# Step 1
+
+- Overcommit on memory
+
+---
+
+# Step 2
+
+- Almost run out of memory
+
+---
+
+# Step 3
+
+- Make a Kafka deployment
+
+---
+
 # Request/Limit = Lower/Upper bound?
 
 - Kind of. But also: no
