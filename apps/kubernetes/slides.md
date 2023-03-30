@@ -32,10 +32,34 @@ Software engineer @iteratec
 
 ---
 
+# Types of compute resources
+
+- CPU
+- Memory
+- Ephemeral storage
+- PID limiting
+- ...
+
+---
+
 # Requests and limits 
 
 - Request: Amount of memory/CPU that is guaranteed for your container. 
 - Limit: Amount of memory/CPU that your container cannot exceed.
+
+---
+
+# Resource units
+
+- 1 CPU unit = 1 core (physical or virtual)
+  - Fractions (0.5)
+  - Millicpu (100m)
+  - 1000m = 1 CPU unit
+
+<br>
+
+- E, P, T, G, M, k
+- Ei, Pi, Ti, Gi, Mi, Ki
 
 ---
 
@@ -59,101 +83,167 @@ spec:
         cpu: "500m"
 ```
 
+<!--
+- Das ist fast schon alles, was dazu in der Doku steht
+- Ganz unten gibt es noch eine "Troubleshooting" Section
+- Da steht z.B. was der Grund ist, wenn ein Pod nicht ge-scheduled wird
+-->
+
 ---
 
-# How Pods with resource requests are scheduled 
+# How Pods are scheduled 
 
+- When you create a Pod, the scheduler selects a node for the Pod to run on
+- Sum of containers' resource requests must be less than the capacity of the node
+- Limits don't matter
+- Node's actual resource consumption doesn't matter
+
+<!--
 - When you create a Pod, the Kubernetes scheduler selects a node for the Pod to run on
 - The scheduler ensures that, for each resource type, the sum of the resource requests of the scheduled containers is less than the capacity of the node
 - Note that although actual memory or CPU resource usage on nodes is very low, the scheduler still refuses to place a Pod on a node if the capacity check fails
+-->
 
+---
+
+# What happens when a container exceeds its memory limit
+
+- Out of memory kill (OOMKilled)
+
+<!--
+- Request/Limit = Lower/Upper bound?
+- Misconception
+-->
 ---
 
 # How to Blow Up a Kubernetes Cluster
 
-- Ingridients: a couple of microservices, Kafka, barely enough memory
+- Ingridients: 
+	- a couple of microservices
+    - Kafka
+    - barely enough memory
+
+<!--
+- Funktionierte so lange gut, bis das gesamte Cluster kein Speicher mehr hatte
+-->
 
 ---
 
-# Step 1
+# What happens when a node runs out of memory?
 
-- Overcommit on memory
-
----
-
-# Step 2
-
-- Almost run out of memory
-
----
-
-# Step 3
-
-- Make a Kafka deployment
-
----
-
-# Request/Limit = Lower/Upper bound?
-
-- Kind of. But also: no
-- Misconception
-
---- 
-
-# What's the request for?
-
-- Scheduling
-- k8s only schedules a pod if a node has the amount of resources that the pods requests--limits don't matter
-- Your pod may get exactly X amount of a requested resource but not a bit/cpu cycle more than that
----
-
-# What do we gain from setting limits?
-
-- Other pods get more resources
-- ???
-
----
-
-# What happens when a pod exceeds its resource limit?
-
-- CPU: Throttling (even if the node has plenty of CPU cycles)
-- Memory: OOMKill (even if the node has plenty of memory)
-
----
-
-# What happens when a node runs out resources?
-
-- CPU: Throttling of pods that exceed their CPU REQUEST
-- Memory: OOMKill of pods that exceed their memory REQUEST
+- Kubernetes terminates pods that exceed their memory request
 - Limits don't matter
-- Who loses? Pods with low requests and high limits
+
+<br>
+
+- Our Kafka pods where using ~2.8 GiB memory
+	- request: 3 GiB
+  - limit: 8 GiB
 
 ---
 
-# CPU throttling is agressive
-
-- Slows down pods way before they reach their limits
-- because of cgroups
+# About Kafka
+- distributed event streaming
+- keeps state in memory
 
 ---
 
-# Quality of Service
+# The incident
 
-- BestEffort = No resource requests and no limits
-- Burstable = Resource limit is greater than resource request
-- Guaranteed = Resource limit is equal to resource request
+- Cluster/nodes ran out of memory
+- Kafka pod was terminated (OOMKilled)
+- Fewer Kafka pods had to handle more messages --> increased memory usage
+- Eventually all Kafka pods were gone / constantly restarting
+- Applications couldn't send messages --> increased memory usage due to backpressure
+- Applications crashed due to improper error handling
+- Kafka pods couldn't be scheduled anymore
 
---- 
+---
+
+# Lesson learned
+
+- Do not overcommit on memory
+- Memory request == memory limit
+- Memory is an incompressible resource
+
+---
+
+# What about CPU?
+
+- CPU is a compressible resource
+- Resource management is completly different to memory
+
+---
+
+# What happens when a Pod exceeds its CPU limit?
+
+- Throttling
+- No termination
+
+---
+layout: quote
+quote: "The Container has no upper bound on the CPU resources it can use. The Container could use all of the CPU resources available on the Node where it is running."
+author: "Kubernetes Documentation"
+cite: "https://kubernetes.io/docs/tasks/configure-pod-container/assign-cpu-resource/#if-you-do-not-specify-a-cpu-limit"
+---
+
+::header::
+# About containers without CPU limits:
+
+<!--
+Technically true
+- we don't want to be noisy neighbors
+BUT
+- only if other containers haven't set requests -->
+
+---
+
+# Requests determine CPU share
+
+- Node: 4 CPU
+- Container A: 500m
+- Container B: 1000m
+
+<br>
+
+- Container A: 1.33 CPU
+- Container B: 2.66 CPU
+
+<!--
+Wenn Container A ein Limit von 1 CPU hätte, würde er auch nur 1 CPU bekommen -->
+
+---
+layout: image-right
+image: '/cpu-limits.png'
+---
+
+# Latency problems
+
+<!--
+- Completly fair scheduler
+- Linux kernel
+- CFS quota
+- Aggressive limiting
+- was gewinnen wir also von limits? Nicht viel
+-->
+
+---
+
+# Lesson learned
+
+- Do not set CPU limits
+- (if possible: --cpu-fs-quota=false)
+
+<!--
+- not possible for managed kubernetes
+- Additional stuff to take into consideration
+-->
+
+---
 
 # Know your resources
 
 The amount of resources available to Pods is less than the node capacity because system daemons use a portion of the available resources. Within the Kubernetes API, each Node has a .status.allocatable field (see NodeStatus for details).
-
----
-
-# Nodes use more memory than allowed
-
-Total limits may be over 100 percent, i.e., overcommitted.
 
 ---
 
@@ -204,15 +294,27 @@ spec:
 
 ---
 
-# Recommendations
+# Summary
 
 - memory request = memory limit
 - no CPU limits
-- rules can be enforced in an organization
-- don't overcommit on memory
+- CFS quota can be reduced/turned off
+
+# Exceptions
+
+- Set CPU limits when you need repeatable results (e.g. performance testing)
+- Not overcommiting on memory is out of budget
+
+<!-- I have no credentials: Here's someone you want to believe -->
 
 ---
 
-# Don't take my word for it
+<div class="grid justify-center w-full">
+<Tweet id="1134193838841401345" class="w-96" />
+</div>
 
-https://twitter.com/thockin/status/1134193838841401345
+---
+layout: fact
+---
+
+# Thank you
