@@ -296,9 +296,11 @@ spec:
 
 # Summary
 
-- memory request = memory limit
+- memory request == memory limit
 - no CPU limits
 - CFS quota can be reduced/turned off
+
+---
 
 # Exceptions
 
