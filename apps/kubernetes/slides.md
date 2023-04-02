@@ -229,6 +229,12 @@ image: '/cpu-limits.png'
 
 ---
 
+# Quality of Service
+
+- 3 classes
+
+---
+
 # Lesson learned
 
 - Do not set CPU limits
